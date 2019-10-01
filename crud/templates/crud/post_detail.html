@@ -11,7 +11,7 @@
     {% endif %}
 
     {% if user.is_authenticated %}    
-    <a data-toggle="tooltip" title="Add post" data-placement="bottom"  class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}">
+    <a data-toggle="tooltip" title="Edit post" data-placement="bottom"  class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}">
         <span class="glyphicon glyphicon-pencil"></span>
     </a>
     <a data-toggle="tooltip" title="delete" data-placement="bottom" class="btn btn-default" href="{% url 'post_remove' pk=post.pk %}"><span class="glyphicon glyphicon-remove"></span></a>

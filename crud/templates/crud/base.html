@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Loading the static css files -->
     <link rel="stylesheet" href="{% static 'css/crud.css' %}">
-    <title>Crud blog</title>
+    <title> Crud blog</title>
 </head>
 <body>
     <div class="page-header">
@@ -26,7 +26,7 @@
     {% else %}
     <a href="{% url 'login' %}" data-toggle="tooltip" title="login" data-placement="bottom" class="top-menu" style="margin-top: 25px;"><span class="glyphicon glyphicon-lock"></span></a>
     {% endif %}
-        <h1> Peter Tech blog</h1>
+        <h1><a href="{% url 'post_list' %}"> Peter Tech blog</a></h1>
     </div>
     <div class="content container">
             <div class="row">
