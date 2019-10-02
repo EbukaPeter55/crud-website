@@ -16,15 +16,19 @@
     <title> Crud blog</title>
 </head>
 <body>
+   <!----Navigation bar--->
+      <!----End of Navigation bar--->
+
     <div class="page-header">
     {% if user.is_authenticated %}
-    <a href="{% url 'post_new' %}" class="top-menu" style="margin-top: 22px;" data-toggle="tooltip" title="Add new post" data-placement="bottom" >
-        <span class="glyphicon glyphicon-plus"></span></a>
-    <a href="{% url 'post_draft_list' %}" class="top-menu" style="margin-top: 22px;"data-toggle="tooltip" title="drafts" data-placement="bottom" >
+    <a href="{% url 'post_new' %}" class="top-menu test" style="margin-top: 22px;" data-toggle="tooltip" title="Add post" data-placement="bottom" >
+        <span class="glyphicon glyphicon-plus" style="font-size: 30px;"></span></a>
+    <a href="{% url 'post_draft_list' %}" class="top-menu test" style="margin-top: 27px; font-size: 30px;"data-toggle="tooltip" title="drafts" data-placement="bottom" >
         <span class="glyphicon glyphicon-edit"></span></a>
-    <p class="top-menu" style="margin-top: 17px;"> Hello {{ user.username }} <small style="font-weight: bold;">(<a href="{% url 'logout' %}">Log out</a>)</small></p>
+    <p class="top-menu" style="margin-top: 30px; font-size: 20px;"> Hello {{ user.username }} <small style="font-weight: bold;">(<a href="{% url 'logout' %}">Log out</a>)</small></p>
     {% else %}
-    <a href="{% url 'login' %}" data-toggle="tooltip" title="login" data-placement="bottom" class="top-menu" style="margin-top: 25px;"><span class="glyphicon glyphicon-lock"></span></a>
+    <a href="{% url 'login' %}" class="top-menu test" data-toggle="tooltip" title="login" data-placement="bottom" class="top-menu" style="margin-top: 25px;" >
+        <span class="glyphicon glyphicon-lock"></span></a>
     {% endif %}
         <h1><a href="{% url 'post_list' %}"> Peter Tech blog</a></h1>
     </div>
@@ -37,11 +41,47 @@
             </div>
         </div>
         
+    <!-- footer -->
+    <footer>
+        <div class="footer-icons">
+            <a href=""><i class="fa fa-facebook-f"></i>
+            </a>
+            <a href=""><i class="fa fa-instagram"></i>
+            </a> 
+            <a href=""><i class="fa fa-pinterest-p"></i>
+            </a>
+        </div>
+        <p>Copyright&copy; Peter Tech blog 2019. All rights reserved</p>
+        <button style="fload: right;" onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    </footer>
+    <!-- end of footer -->
     <!-- jquery code -->
     <script>
 $(document).ready(function(){
   $('[data-toggle="tooltip"]').tooltip();   
 });
+
+
+//Get the button
+var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
 </script>
+
 </body>
 </html>

@@ -1,11 +1,20 @@
                 {% extends 'crud/base.html' %}
                 {% block content %}
+                    <hr>
+                    <div  class="top-header">
+                    <ul>
+                    <li> <a href={% url 'post_list' %}>Home</a> </li>
+                    <li><a href="#">Latest Tech news</a></li>
+                    <li><a href="#">Previous Post</a></li>
+                    </ul>
+                    </div>
                     {% for post in posts %}
                         <div class="post">
+                            <hr>
                             <div class="date">
-                                <p>published: {{ post.published_date }}</p>
+                                <p><b>Published:</b> {{ post.published_date }}</p>
                             </div>
-                            <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+                            <h2><a style="color: #337ab7; font-weight: 400;" href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
                             <p>{{ post.text|linebreaksbr }}</p>
                         </div>
                     {% endfor %}

@@ -3,8 +3,9 @@
 {% block content %}
     {% for post in posts %}
         <div class="post">
+        <hr>
             <p class="date">created: {{ post.created_date|date:'d-m-Y' }}</p>
-            <h1><a style="color: black;" href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+            <h1><a style="color: #337ab7;" href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
             <p>{{ post.text|truncatechars:200 }}</p>
         </div>
     {% endfor %}
