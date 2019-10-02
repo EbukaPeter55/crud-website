@@ -1,8 +1,6 @@
 {% extends 'crud/base.html' %}
 <div style=" margin-bottom: 10px;" >
 {% block content %}
-
-<h2>Edit post</h2>
     <form method="POST" class="post-form">{% csrf_token %}
         {{ form.as_p }}
         <button style=" background: #337ab7; border:none; border-radius: 10px; width: 53px; height: 30px; color: black; font-family: 'roboto'" type="submit" class="save btn btn-default">Save</button>
