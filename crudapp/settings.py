@@ -82,11 +82,11 @@ DATABASES = {
 
      'default': {
        'ENGINE': 'django.db.backends.mysql',
-       'NAME': 'crudapp',
-       'USER': 'root',
-       'PASSWORD': '', 
-       'HOST': 'localhost',
-       'PORT': '',
+       'NAME': 'Ow2mQuG3vH',
+       'USER': 'Ow2mQuG3vH',
+       'PASSWORD': 'UXBTD6EDRC', 
+       'HOST': 'remotemysql.com',
+       'PORT': '3306',
    }
 }
 
